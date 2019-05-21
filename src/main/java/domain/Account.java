@@ -1,5 +1,7 @@
 package domain;
 
+import com.google.gson.Gson;
+
 public class Account {
 	private String firstName;
 	private String lastName;
@@ -21,5 +23,9 @@ public class Account {
 	
 	public int getAccountNumber() {
 		return accountNumber;
+	}
+	
+	public String convertToJSON() {
+		return new Gson().toJson(this);
 	}
 }
