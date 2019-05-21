@@ -1,19 +1,37 @@
 package Service;
 
+import com.google.gson.Gson;
+
 import domain.Account;
-import repo.AccountManagement;
+import repo.AccountRepo;
 
 public class Service {
 	
-	static public void addAccountToMap(Account newAccount) {
-		AccountManagement.accountMap.put(newAccount.getAccountNumber(), newAccount);
+	private AccountRepo repo;
+	
+	private Service() {
+		repo = AccountRepo.getInstance();
 	}
 	
-	static public Account retrieveAccount(int accountNumber) {
-		return AccountManagement.accountMap.get(accountNumber);
+	private static Service serv = new Service();
+	
+	public static Service getInstance() {
+		return serv;
 	}
 	
-	static public void printAccounts() {
-		AccountManagement.accountMap.values().stream().map(a -> a.convertToJSON()).forEach(System.out::println);
+	public void addAccountToMap(Account newAccount) {
+		repo.getAccounts().put(newAccount.getAccountNumber(), newAccount);
+	}
+	
+	public Account retrieveAccount(int accountNumber) {
+		return repo.getAccounts().get(accountNumber);
+	}
+	
+	public String returnAccounts() {
+		return new Gson().toJson(repo.getAccounts());
+	}
+	
+	public int countAccounts(String name) {
+		return (int) repo.getAccounts().values().stream().filter(a -> a.getFirstName().equals(name)).count();
 	}
 }
