@@ -1,15 +1,13 @@
 package accountapplication;
 
-import java.util.Map;
-
 public class Service {
 	
-	static public void addAccountToMap(Map<Integer, Account> map, Account newAccount) {
-		map.put(newAccount.getAccountNumber(), newAccount);
+	static public void addAccountToMap(Account newAccount) {
+		AccountManagement.accountMap.put(newAccount.getAccountNumber(), newAccount);
 	}
 	
-	static public Account retrieveAccount(Map<Integer, Account> map, int accountNumber) {
-		return map.get(accountNumber);
+	static public Account retrieveAccount(int accountNumber) {
+		return AccountManagement.accountMap.get(accountNumber);
 	}
 	
 }
