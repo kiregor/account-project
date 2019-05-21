@@ -5,9 +5,9 @@ public class Account {
 	private String lastName;
 	private int accountNumber;
 	
-	public Account(String inputFirstName, String inpurLastNAme, int inputAccountNumber) {
+	public Account(String inputFirstName, String inputLastNAme, int inputAccountNumber) {
 		firstName = inputFirstName;
-		lastName = inpurLastNAme;
+		lastName = inputLastNAme;
 		accountNumber = inputAccountNumber;
 	}
 	
