@@ -1,4 +1,7 @@
-package accountapplication;
+package Service;
+
+import domain.Account;
+import repo.AccountManagement;
 
 public class Service {
 	

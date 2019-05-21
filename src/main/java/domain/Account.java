@@ -1,4 +1,4 @@
-package accountapplication;
+package domain;
 
 public class Account {
 	private String firstName;
