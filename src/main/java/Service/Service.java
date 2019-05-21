@@ -13,4 +13,7 @@ public class Service {
 		return AccountManagement.accountMap.get(accountNumber);
 	}
 	
+	static public void printAccounts() {
+		AccountManagement.accountMap.values().stream().map(a -> a.convertToJSON()).forEach(System.out::println);
+	}
 }
