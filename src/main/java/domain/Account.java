@@ -1,11 +1,20 @@
 package domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import com.google.gson.Gson;
 
+@Entity
 public class Account {
 	private String firstName;
 	private String lastName;
+	@Id
 	private int accountNumber;
+	
+	public Account() {
+		
+	}
 	
 	public Account(String inputFirstName, String inputLastNAme, int inputAccountNumber) {
 		firstName = inputFirstName;
@@ -27,5 +36,12 @@ public class Account {
 	
 	public String convertToJSON() {
 		return new Gson().toJson(this);
+	}
+	
+	public boolean updateAccount(Account update) {
+		this.firstName = update.getFirstName();
+		this.lastName = update.getLastName();
+		
+		return true;
 	}
 }
