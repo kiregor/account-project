@@ -9,14 +9,16 @@ import domain.Account;
 
 public class appTest {
 	
-	static Service serv = Service.getInstance();
+	private static Service serv = Service.getInstance();
+	private static Account acc;
 	
 	@BeforeClass
 	public static void setup() {
 		serv.addAccountToMap(new Account("John", "Smith", 1));
 		serv.addAccountToMap(new Account("John", "Gordon", 2));
 		serv.addAccountToMap(new Account("Jordan", "Smith", 3));
-		serv.addAccountToMap(new Account("John", "Peters", 4));
+		acc = new Account("John", "Peters", 4);
+		serv.addAccountToMap(acc);
 	}
 	
 	@Test
@@ -36,8 +38,7 @@ public class appTest {
 	
 	@Test
 	public void accountReturnOneTest() {
-		Account exp = new Account("John", "Peters", 4);
 		Account test = serv.retrieveAccount(4);
-		assertEquals(exp.convertToJSON(), test.convertToJSON());
+		assertEquals(acc, test);
 	}
 }
