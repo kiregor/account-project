@@ -54,11 +54,10 @@ public class AccountRepoDB implements AccountRepo{
 	}
 
 	@Override
+	@Transactional(REQUIRED)
 	public Account updateAccount(Account account) {
-		
 		Account existingAccount = manager.find(Account.class, account.getAccountNumber());
-		existingAccount.updateAccount(account);
-		return existingAccount;
+		return existingAccount.updateAccount(account) ? existingAccount : new Account();
 	}
 	
 	public void setManager(EntityManager manager) {
