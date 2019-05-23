@@ -1,0 +1,34 @@
+.boxes{
+	border: thin solid black;
+	border-radius: 15px;
+	padding: 30px;
+	background: powderblue;
+	box-shadow: 10px 5px 5px grey;
+	max-width: 700px
+}
+
+.output{
+	color: darkblue;
+}
+
+.columns{
+	width:700px;
+	height: 100px;
+}
+
+.columns div{
+	width: 80px;
+	float: left;
+}
+
+#outputAll{
+	overflow: auto;
+}
+
+#outputAllAccountNumberValue{
+	width: 200px;
+}
+
+input{
+	box-shadow: 3px 2px 2px grey;
+}

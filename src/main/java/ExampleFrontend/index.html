@@ -1,0 +1,60 @@
+<html>
+<head>
+	<title>Account App</title>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="main.js"></script>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="boxes">
+		Get Account:<br>
+		<input name="AccountNo" id="AccountNo" placeholder="Account Number">
+		<input type="button" onclick="getAccount()" value="Get Account">
+		<input type="button" onclick="clearText()" value="Clear">
+		<div class="output" id="output"></div>
+	</div>
+	<br>
+	<div class="boxes">
+		Get All Accounts:<br>
+		<input type="button" onclick="getAllAccounts()" value="Get All Accounts">
+		<input type="button" onclick="clearText()" value="Clear">
+		<br>
+		<div class="output columns" id="outputAll">
+			<div id="outputAllFirstNameTitle"></div>
+			<div id="outputAllFirstNameValue"></div>
+			<div id="outputAllLastNameTitle"></div>
+			<div id="outputAllLastNameValue"></div>
+			<div id="outputAllAccountNumberTitle"></div>
+			<div id="outputAllAccountNumberValue"></div>
+		</div>
+	</div>
+	<br>
+	<div class="boxes">
+		Make Account:<br>
+		<input name="firstName" id="firstNameCreate" placeholder="First Name">
+		<input name="lastName" id="lastNameCreate" placeholder="Last Name">
+		<input type="button" onclick="makeAccount()" value="Create Account">
+		<input type="button" onclick="clearText()" value="Clear">
+		<div class="output" id="outputCreate"></div>
+	</div>
+	<br>
+	<div class="boxes">
+		Update Account:<br>
+		<input name="firstName" id="firstNameUpdate" placeholder="First Name">
+		<input name="lastName" id="lastNameUpdate" placeholder="Last Name">
+		<input name="accountNumber" id="accountNumberUpdate" placeholder="Account Number">
+		<input type="button" onclick="updateAccount()" value="Update Account">
+		<input type="button" onclick="clearText()" value="Clear">
+		<div class="output" id="outputUpdate"></div>
+	</div>
+	<br>
+	<div class="boxes">
+		Delete Account:<br>
+		<input name="AccountNo" id="AccountNoDelete" placeholder="Account Number">
+		<input type="button" onclick="deleteAccount()" value="Delete Account">
+		<input type="button" onclick="clearText()" value="Clear">
+		<div class="output" id="outputDelete"></div>
+	</div>
+</body>
+</html>
