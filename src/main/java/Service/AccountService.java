@@ -33,6 +33,18 @@ public class AccountService {
 	public String getAccount(Integer id) {
 		return json.toJSON(this.repo.getAccount(id));
 	}
+	
+	public String getAllAccounts() {
+		return json.toJSON(this.repo.getAllAccounts());
+	}
+	
+	public String updateAccount(String account) {
+		return json.toJSON(this.repo.updateAccount(json.fromJSON(account, Account.class)));
+	}
+	
+	public String deleteAccount(int id) {
+		return this.repo.deleteAccount(id);
+	}
 
 	public void setJson(JSONUtil json) {
 		this.json = json;

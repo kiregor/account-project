@@ -1,6 +1,7 @@
 package rest;
 
 import javax.inject.Inject;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -30,5 +31,26 @@ public class AccountEndpoint {
 	@Produces({"application/json"})
 	public String getAccount(@PathParam("id") Integer id) {
 		return serv.getAccount(id);
+	}
+	
+	@Path("/getAllAccounts")
+	@GET
+	@Produces({"application/json"})
+	public String getAllAccounts() {
+		return serv.getAllAccounts();
+	}
+	
+	@Path("/updateAccount")
+	@POST
+	@Produces({"application/json"})
+	public String updateAccount(String account) {
+		return serv.updateAccount(account);
+	}
+	
+	@Path("/deleteAccount/{id}")
+	@DELETE
+	@Produces({"application/json"})
+	public String deleteAccount(@PathParam("id") Integer id) {
+		return serv.deleteAccount(id);
 	}
 }
