@@ -6,8 +6,10 @@ import util.JSONUtil;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
 
+@Alternative
 public class AccountRepoMap implements AccountRepo {
 	private Map<Integer, Account> accountMap = new HashMap<>();
 	
