@@ -1,8 +1,6 @@
 package accountapplication;
 
 import Service.AccountService;
-import domain.Account;
-import repo.AccountRepoMap;
 
 public class App {
 	public void printHello() {
